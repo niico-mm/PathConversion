@@ -38,7 +38,8 @@ gulp.task('checkBasePath', function () {
 // ----- 共通関数 -----
 function convertPath(file, enc, cb, isAbsolute, basePath) {
     var text = String( fs.readFileSync(file.path) );
-    var newText = text.replace( /url\(\'(.*)\'\)/g, function(match, matchedPath){
+    var newText = text.replace( /url\([\'\"](.*)[\'\"]\)/g, function(match, matchedPath){
+        console.log(matchedPath);
         if (isAbsolute) {
             return 'url(\'' + path.resolve(basePath, matchedPath) + '\')';
         } else {

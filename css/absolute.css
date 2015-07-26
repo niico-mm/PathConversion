@@ -8,7 +8,7 @@
 
 .icon-block {
     padding: 0 15px;
-    background-image: url('/data/orandea/impl/bbb');
+    background-image: url("/data/orandea/impl/bbb");
 }
 .icon-block .material-icons {
 	font-size: inherit;
