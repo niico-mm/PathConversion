@@ -24,15 +24,10 @@ gulp.task('rel2abs', function () {
 });
 
 gulp.task('absolute', function () {
-
   gulp.src('css/**/*.css')
     .pipe(through.obj(function(file, enc, cb){
-        var text = String( fs.readFileSync(file.path) );
-        var newText = text.replace( /url\(\'(.*)\'\)/g, function(match,p1){
-            return 'url(\'' + path.resolve('/foo/bar', p1) + '\')';
-        } );
-        file.contents = new Buffer(newText, 'utf8');
-        this.push(file);
+        var newFile = convertPath(file, enc, cb, true);
+        this.push(newFile);
         cb();
     }))
     .pipe(gulp.dest('./dest'))
@@ -40,20 +35,28 @@ gulp.task('absolute', function () {
 });
 
 gulp.task('relative', function () {
-
   gulp.src('css/**/*.css')
     .pipe(through.obj(function(file, enc, cb){
-        var text = String( fs.readFileSync(file.path) );
-        var newText = text.replace( /url\(\'(.*)\'\)/g, function(match,p1){
-            return 'url(\'' + path.relative('/data/orandea/test/aaa', p1) + '\')';
-        } );
-        file.contents = new Buffer(newText, 'utf8');
-        this.push(file);
+        var newFile = convertPath(file, enc, cb, false);
+        this.push(newFile);
         cb();
     }))
     .pipe(gulp.dest('./dest'))
     .on('error', function(e) {console.log(e);});
 });
+
+function convertPath(file, enc, cb, isAbsolute) {
+    var text = String( fs.readFileSync(file.path) );
+    var newText = text.replace( /url\(\'(.*)\'\)/g, function(match, matchedPath){
+        if (isAbsolute) {
+            return 'url(\'' + path.resolve('/foo/bar', matchedPath) + '\')';
+        } else {
+            return 'url(\'' + path.relative('/data/orandea/test/aaa', matchedPath) + '\')';
+        }
+    } );
+    file.contents = new Buffer(newText, 'utf8');
+    return file;
+}
 
 gulp.task('watch', function () {
     gulp.watch('sass/**/*.scss', ['sass']);
