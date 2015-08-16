@@ -1,126 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja" dir="ltr">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<meta charset="UTF-8">
+<title>PAGETITLE｜SITENAME</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="/common/css/cmn_layout.css" media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/cmn_style.css" media="all">
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/common.js"></script>
+<style>
+.icon-block {
+		padding: 0 15px;
+		background-image: url('/data/orandea/impl/bbb');
+}
+.icon-block {
+    padding: 0 15px;
+    background-image: url('../data/orandea/impl/bbb');
+}
+</style>
+<!--[if lt IE 9]><script src="/common/js/html5_ie.js"></script><![endif]-->
 </head>
-<body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
+<body id="gDef" class="lDef">
+<div id="wrapper">
+	<header id="header">
+		<div id="headerIn">
+			<h1 id="headerLogo"><a href="index.html"><img src="" alt="" width="" height=""></a></h1>
+			<div id="headerSearch">
+				<form action="#" method="post">
+					<input type="text" value="">
+					<input type="image" src="" alt="検索">
+				</form>
+			<!-- /headerSearch --></div>
+			<div id="headerLinks">
+				<ul>
+					<li><a href="#">テキスト</a></li>
+					<li><a href="#">テキスト</a></li>
+					<li><a href="#">テキスト</a></li>
+				</ul>
+			<!-- /headerLinks --></div>
+			<nav id="gNavi">
+				<ul>
+					<li id="gNav01"><a href="#">gNav01</a></li>
+					<li id="gNav02"><a href="#">gNav02</a></li>
+					<li id="gNav03"><a href="#">gNav03</a></li>
+					<li id="gNav04"><a href="#">gNav04</a></li>
+					<li id="gNav05"><a href="#">gNav05</a></li>
+					<li id="gNav06"><a href="#">gNav06</a></li>
+				</ul>
+			<!-- /gNavi --></nav>
+		<!-- /headerIn --></div>
+	</header>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
+	<h2 id="mainimg"><img src="" alt="" width="" height=""></h2>
 
-    </div>
-  </div>
+	<ul id="breadcrumb">
+		<li class="home"><a href="index.html">ホーム</a></li>
+		<li><a href="#">第二階層</a></li>
+		<li><a href="#">第三階層</a></li>
+		<li>第四階層</li>
+	</ul>
 
+	<div id="contents">
+		<article id="main">
 
-  <div class="container">
-    <div class="section">
+			<section class="sectionLv01">
+				<p class="atode">section</p>
+			<!-- /sectionLv01 --></section>
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+			<section class="sectionLv01">
+				<p class="atode">section</p>
+			<!-- /sectionLv01 --></section>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
+			<section class="sectionLv01">
+				<p class="atode">section</p>
+			<!-- /sectionLv01 --></section>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+			<section class="sectionLv01">
+				<p class="atode">section</p>
+			<!-- /sectionLv01 --></section>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
+		<!-- /main --></article>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+		<div id="sub">
+			<p class="atode">sub</p>
+			<nav id="lNavi">
+				<ul>
+					<li><a href="#" class="lNav01">l01</a></li>
+					<li><a href="#" class="lNav02">l02</a>
+						<ul>
+							<li><a href="#" class="lNav02_01">l02_01</a></li>
+							<li><a href="#" class="lNav02_02">l02_02</a></li>
+							<li><a href="#" class="lNav02_03">l02_03</a>
+								<ul>
+									<li><a href="#" class="lNav02_03_01">l02_03_01</a></li>
+									<li><a href="#" class="lNav02_03_02">l02_03_02</a></li>
+									<li><a href="#" class="lNav02_03_03">l02_03_03</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="lNav02_104">l02_04</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="lNav03">l03</a>
+						<ul>
+							<li><a href="#" class="lNav03_01">l03_01</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="lNav04">l04</a>
+						<ul>
+							<li><a href="#" class="lNav04_01">l04_01</a></li>
+						</ul>
+					</li>
+				</ul>
+			<!-- /lNavi --></nav>
+			<div>
+				<ul>
+					<li><a href=""><img src="" alt="" width="" height=""></a></li>
+					<li><a href=""><img src="" alt="" width="" height=""></a></li>
+				</ul>
+			</div>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
+		<!-- /sub --></div>
+	<!-- /contents --></div>
+	<p class="pageTop"><a href="#header">PageTop</a></p>
+<!-- /wrapper --></div>
 
-    </div>
-    <br><br>
-
-    <div class="section">
-
-    </div>
-  </div>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../../bin/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
+<footer id="footer">
+	<div id="footerIn">
+		<ul id="footerLinks">
+			<li><a href="#">テキスト</a></li>
+			<li><a href="#">テキスト</a></li>
+			<li><a href="#">テキスト</a></li>
+			<li><a href="#">テキスト</a></li>
+		</ul>
+		<p id="copyright">Copyright &copy; example. All Rights Reserved.</p>
+	<!-- /footerIn --></div>
+</footer>
+</body>
 </html>

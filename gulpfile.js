@@ -8,7 +8,12 @@ var fs = require('fs');
 var argv = require('minimist')(process.argv.slice(2));
 
 gulp.task('absolute', ['checkBasePath'], function () {
-  gulp.src('css/**/*.css')
+  gulp.src(['**/*.css', '**/*.html'])
+  .pipe(through.obj(function(file, enc, cb){
+      var newFile = convertPath(file, enc, cb, true, argv.basePath);
+      this.push(newFile);
+      cb();
+  }))
   .pipe(through.obj(function(file, enc, cb){
       var newFile = convertPath(file, enc, cb, true, argv.basePath);
       this.push(newFile);
@@ -19,14 +24,16 @@ gulp.task('absolute', ['checkBasePath'], function () {
 });
 
 gulp.task('relative', ['checkBasePath'], function () {
-  gulp.src('css/**/*.css')
+  gulp.src(['**/*.css', '**/*.html'])
     .pipe(through.obj(function(file, enc, cb){
         var newFile = convertPath(file, enc, cb, false, argv.basePath);
         this.push(newFile);
         cb();
     }))
     .pipe(gulp.dest('./dest'))
-    .on('error', function(e) {console.log(e);});
+    .on('error', function(e){
+      console.log(e);
+    });
 });
 
 gulp.task('checkBasePath', function () {
@@ -46,6 +53,16 @@ function convertPath(file, enc, cb, isAbsolute, basePath) {
             return 'url(\'' + path.relative(basePath, matchedPath) + '\')';
         }
     } );
+
+    newText = newText.replace( /href\=[\'\"](.*)[\'\"]/g, function(match, matchedPath){
+        console.log(matchedPath);
+        if (isAbsolute) {
+            return 'href=\"' + path.resolve(basePath, matchedPath) + '\"';
+        } else {
+            return 'href=\"' + path.relative(basePath, matchedPath) + '\")';
+        }
+    } );
+
     file.contents = new Buffer(newText, 'utf8');
     return file;
 }
